@@ -1,0 +1,50 @@
+        body {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                margin: 50px;
+
+
+            }
+            .pessoa {
+                border-width: 2px;
+                border-style: solid;
+                border-color: black;
+                height: 100px;
+                border-radius: 50%;
+
+            }
+            .caixa {
+                display: flex;
+                flex-direction: column;
+                justify-content: center; 
+                align-items: center;
+                border:2px solid red;
+                width: 220px;
+                height: 235px;
+            }
+            span {
+
+                display: flex;
+                flex-direction: column;
+                justify-content: center; 
+                align-items: center;
+            }
+
+
+            .card {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+
+            }
+
+            h3 {
+                display: flex;
+                flex-direction: column;
+                justify-content: center; 
+                align-items: center;
+                color: blue; 
+            }
