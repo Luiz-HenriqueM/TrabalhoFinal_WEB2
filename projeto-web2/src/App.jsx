@@ -10,12 +10,17 @@ function App() {
   
   return (
     <div>
+      <header>
       <h1>Cardápio</h1>
+      </header>
+      <section>
+      
     {pratos.map(prato => (
       <Card key={prato.id} nome={prato.nome} preco={prato.preco} disponivel={prato.disponivel} />
 
     ))}
 
+      </section>
     </div>
   )
 }
