@@ -1,5 +1,6 @@
 import './App.css'
 import Card from  './components/Card'
+import Botao from './components/Botao'
 
 function App() {
     const pratos = [
@@ -17,9 +18,9 @@ function App() {
       
     {pratos.map(prato => (
       <Card key={prato.id} nome={prato.nome} preco={prato.preco} disponivel={prato.disponivel} />
-
+      
     ))}
-
+    <Botao />
       </section>
     </div>
   )
