@@ -17,4 +17,4 @@
   )
 }
 
-export default Pratos
+export default Pratos   
