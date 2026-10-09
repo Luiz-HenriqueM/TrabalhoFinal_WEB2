@@ -1,26 +1,26 @@
 import './App.css'
-import Card from  './components/Card'
 import Botao from './components/Botao'
+import Pratos from './components/Prato'
+import { useState } from 'react'
 
 function App() {
-    const pratos = [
-    { id: 1, nome: 'Risoto', preco: 10.99, disponivel: true },
-    { id: 2, nome: 'Lasanha', preco: 12.99, disponivel: false },
-    { id: 3, nome: 'Macarrão', preco: 8.99, disponivel: true },
-  ];
+
+
+    const [salvo, setSalvo] = useState([]);
+
   
-  return (
+        return (
     <div>
       <header>
       <h1>Cardápio</h1>
       </header>
       <section>
       
-    {pratos.map(prato => (
-      <Card key={prato.id} nome={prato.nome} preco={prato.preco} disponivel={prato.disponivel} />
-      
-    ))}
+      <Pratos onAdicionar={(prato) => setSalvo([...salvo, prato.nome])} />
     <Botao />
+      <h4>Meu Prato</h4>
+      {salvo.map(salvo => <p>{salvo}</p>)}
+      
       </section>
     </div>
   )
