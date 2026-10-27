@@ -1,26 +1,24 @@
 import './App.css'
-import Botao from './components/Botao'
-import Pratos from './components/Prato'
+import Catalogo from './components/Catalogo'
+import Carrinho from './components/Carrinho'
 import { useState } from 'react'
 
 function App() {
 
+  const [compras, setCompras] = useState([]);
 
-    const [salvo, setSalvo] = useState([]);
+  const adicionar = (produto) => {
+    setCompras([...compras, produto]);
+  };
 
-  
-        return (
+  return (
     <div>
       <header>
-      <h1>Cardápio</h1>
+        <h1>Loja</h1>
       </header>
       <section>
-      
-      <Pratos onAdicionar={(prato) => setSalvo([...salvo, prato.nome])} />
-    <Botao />
-      <h4>Meu Prato</h4>
-      {salvo.map(salvo => <p>{salvo}</p>)}
-      
+        <Catalogo onAdicionar={adicionar} />
+        <Carrinho compras={compras} />
       </section>
     </div>
   )
