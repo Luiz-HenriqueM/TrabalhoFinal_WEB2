@@ -1,0 +1,35 @@
+.formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 6px;
+}
+
+.erro {
+  padding: 8px 10px;
+  background-color: #fdecea;
+  border-left: 4px solid #c62828;
+  border-radius: 5px;
+  color: #c62828;
+  font-size: 14px;
+}
+
+.acoes {
+  display: flex;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.acoes button {
+  padding: 8px 14px;
+  font-size: 14px;
+}
+
+.acoes .cancelar {
+  background-color: white;
+  color: #8b0b6b;
+}
+
+.acoes .cancelar:hover {
+  background-color: #f8e9f6;
+}
