@@ -3,9 +3,7 @@ import estilos from './FormularioSerie.module.css'
 
 const STATUS = ['Quero assistir', 'Assistindo', 'Concluída']
 
-// Formulário controlado para editar status, nota e comentário de uma série
 function FormularioSerie({ serie, aoSalvar, aoCancelar }) {
-  // Os campos já começam com os valores atuais da série
   const [form, setForm] = useState({
     status: serie.dsStatus,
     nota: serie.nuNota === null ? '' : String(serie.nuNota),
@@ -18,8 +16,6 @@ function FormularioSerie({ serie, aoSalvar, aoCancelar }) {
 
     const textoNota = form.nota.trim()
     const nuNota = textoNota === '' ? null : Number(textoNota)
-
-    // A nota é opcional, mas se vier precisa estar entre 0 e 10
     if (nuNota !== null && (!Number.isFinite(nuNota) || nuNota < 0 || nuNota > 10)) {
       setErro('A nota precisa ser um número de 0 a 10.')
       return

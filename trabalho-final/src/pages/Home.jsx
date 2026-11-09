@@ -3,22 +3,21 @@ import Card from '../components/Card'
 import estilos from '../App.module.css'
 
 function Home({ series, aoAdicionar }) {
-  const [busca, setBusca] = useState('') // o que está digitado no campo
-  const [termo, setTermo] = useState('') // o que foi enviado para buscar
+  const [busca, setBusca] = useState('') 
+  const [termo, setTermo] = useState('') 
   const [resultados, setResultados] = useState([])
   const [carregando, setCarregando] = useState(true)
   const [erro, setErro] = useState('')
 
-  // Roda ao abrir a página e de novo toda vez que o termo da busca mudar
+  
   useEffect(() => {
-    let ativo = true // vira false se o termo mudar antes da resposta chegar
+    let ativo = true
 
     const carregar = async () => {
       setCarregando(true)
       setErro('')
 
       try {
-        // Sem termo: lista de séries para começar. Com termo: busca por nome.
         const endereco =
           termo === ''
             ? 'https://api.tvmaze.com/shows?page=0'
@@ -28,8 +27,6 @@ function Home({ series, aoAdicionar }) {
         if (!resposta.ok) throw new Error('Falha na busca')
 
         const dados = await resposta.json()
-
-        // A busca devolve { show: {...} } em cada item; a lista devolve a série direto
         if (ativo) setResultados(termo === '' ? dados.slice(0, 12) : dados.map((item) => item.show))
       } catch {
         if (ativo) setErro('Não foi possível buscar as séries. Tente de novo.')
@@ -39,8 +36,6 @@ function Home({ series, aoAdicionar }) {
     }
 
     carregar()
-
-    // LIMPEZA: a resposta antiga é ignorada
     return () => {
       ativo = false
     }

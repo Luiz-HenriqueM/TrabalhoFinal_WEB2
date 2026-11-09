@@ -1,6 +1,5 @@
 import estilos from './Card.module.css'
 
-// Uma série que veio da busca na API do TVmaze
 function Card({ serie, jaAdicionada, aoAdicionar }) {
   const ano = serie.premiered ? serie.premiered.slice(0, 4) : 'Sem data'
   const generos = serie.genres.length > 0 ? serie.genres.join(', ') : 'Sem gênero'
@@ -30,4 +29,4 @@ function Card({ serie, jaAdicionada, aoAdicionar }) {
   )
 }
 
-export default Card
+export default Carp

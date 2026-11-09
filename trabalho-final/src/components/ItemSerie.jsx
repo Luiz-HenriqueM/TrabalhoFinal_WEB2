@@ -2,7 +2,6 @@ import { useState } from 'react'
 import FormularioSerie from './FormularioSerie'
 import estilos from './ItemSerie.module.css'
 
-// Uma série da minha lista: mostra os dados e deixa editar ou remover
 function ItemSerie({ serie, aoSalvar, aoRemover }) {
   const [editando, setEditando] = useState(false)
 
