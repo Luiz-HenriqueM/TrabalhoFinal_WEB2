@@ -29,4 +29,4 @@ function Card({ serie, jaAdicionada, aoAdicionar }) {
   )
 }
 
-export default Carp
+export default Card
